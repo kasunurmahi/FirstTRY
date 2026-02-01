@@ -4,7 +4,7 @@ name: Smallscreen-pipeline
 
 on:
  push:
-    branches: [ "feature-dev" ]
+    branches: [ "feature-DEV" ]
 
 
 jobs:
