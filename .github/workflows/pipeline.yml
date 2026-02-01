@@ -27,11 +27,17 @@ jobs:
           run: |
             mvn package 
             
-        - name: Uploading the artifact to REPO
+        - name: Uploading ARTIFACTS TO REPO
           uses: actions/upload-artifact@v4
           with:
             name: FirstTRYY-artifact
             path: target/* .jar
+
+
+        - name: TRIVY SCAN FOR VUL
+          run: |
+            trivy fs --format table -o trivy-fs-report.html
+          
 
         
      
