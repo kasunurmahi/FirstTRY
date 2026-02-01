@@ -1,0 +1,15 @@
+# 1st github pipeline
+
+name: Smallscreen
+
+
+on: 
+  push:
+     branches: [ "main" ]
+
+
+jobs:
+  build :
+    runs-on: self-hosted
+
+    
