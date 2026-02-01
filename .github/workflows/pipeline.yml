@@ -16,5 +16,14 @@ jobs:
         - name: MAHI-GIT-CHECKOUT
           uses: actions/checkout@v4
 
+        - name: JAVA INSTALLING
+          uses: actions/setup-java@v4
+          with:
+            java-version: '17'
+            distribution: 'temurin'
+            
+
+        
+
         
         
