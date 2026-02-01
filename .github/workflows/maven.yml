@@ -24,6 +24,20 @@ jobs:
       run: mvn  package --file pom.xml
 
 
+    - uses: actions/upload-artifacts@v4
+      with:
+        name: FirstTRYY
+        path: target/*.jar
+
+    - name: Trivy Fs scan
+      run: |
+       trivy fs --format table -o trivy-fs-report.html .
+
+        
+    
+    
+
+
 
 
          
