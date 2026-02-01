@@ -12,5 +12,9 @@ jobs:
       runs-on: self-hosted
 
       steps:
-        - uses: actions/checkout@v4
+       
+        - name: MAHI-GIT-CHECKOUT
+          uses: actions/checkout@v4
+
+        
         
