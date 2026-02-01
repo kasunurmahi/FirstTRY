@@ -35,6 +35,11 @@ jobs:
       run: |
        trivy fs --format table -o trivy-fs-report.html .
 
+    - name: installing the zip
+      run: |
+        sudo apt update
+        sudo apt get install -y unzip
+
 
     - name: SonarQube- scan
       uses: sonarsource/sonarqube-scan-action@master
