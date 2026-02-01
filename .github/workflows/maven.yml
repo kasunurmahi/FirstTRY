@@ -34,6 +34,34 @@ jobs:
     - name: Trivy Fs scan
       run: |
        trivy fs --format table -o trivy-fs-report.html .
+
+
+    - name: SonarQube- scan
+      uses: sonarsource/sonarqube-scan-action@master
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+
+    - name: Install jq
+      run: |
+        sudo apt get update 
+        sudo apt install -y jq
+
+    - name: Sonar Quality check
+      id: sonarqube-quality-gate-check
+      uses: sonarsource/sonarqube-quality-gate-action@master
+      # force to fail
+      timeout-minutes: 5
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+
+
+        
+        
+      
+
+  
        
 
         
