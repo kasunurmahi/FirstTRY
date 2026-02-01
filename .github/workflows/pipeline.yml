@@ -21,10 +21,20 @@ jobs:
           with:
             java-version: '17'
             distribution: 'temurin'
-            
+
+            # here mvn package --file pom.xml we can include
         - name: BUILD WITH MAVEN
           run: |
             mvn package 
+            
+        - name: Uploading the artifact to REPO
+          uses: actions/upload-artifact@v4
+          with:
+            name: FirstTRYY-artifact
+            path: target/* .jar
+
+        
+     
         
 
          
