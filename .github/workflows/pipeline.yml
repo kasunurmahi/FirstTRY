@@ -74,6 +74,11 @@ jobs:
         - name: BUILD - DOCKER - IMAGE
           run: |
             docker build -t kasunurmahi/firsttry:latey .
+
+
+        - name: TRIVY-SCAN FOR IMAGE
+          run: |
+            trivy image --format table -o trivy-image-report.html kasunurmahi/firsttry:latey
             
 
 
