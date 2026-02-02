@@ -31,12 +31,12 @@ jobs:
           uses: actions/upload-artifact@v4
           with:
             name: FirstTRYY-artifact
-            path: target/* .jar
+            path: target/*.jar
 
 
         - name: TRIVY SCAN FOR VUL
           run: |
-            trivy fs --format table -o trivy-fs-report.html
+            trivy fs . --format table -o trivy-fs-report.html
           
 
         
