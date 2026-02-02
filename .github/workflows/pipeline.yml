@@ -73,7 +73,7 @@ jobs:
 
         - name: BUILD - DOCKER - IMAGE
           run: |
-            docker build -t kasunurmahi/FIRSTTRY:latey .
+            docker build -t kasunurmahi/firsttry:latey .
             
 
 
