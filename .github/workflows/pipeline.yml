@@ -92,6 +92,17 @@ jobs:
           run: |
             docker push kasunurmahi/firsttry:latey
 
+
+
+        - name: KUBERNETES-DEPLOY
+          uses: tale/kubectl-action@v1
+          with:
+            base64-kube-config: ${{ secrets.KUBE_CONFIG }} 
+        - run: |
+             kubectl apply -f deployment-service.yml -n mahidhar
+             kubectl get svc -n mahihdar
+            
+
             
             
 
