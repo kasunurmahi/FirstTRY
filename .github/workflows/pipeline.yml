@@ -98,8 +98,11 @@ jobs:
           uses: tale/kubectl-action@v1
           with:
             base64-kube-config: ${{ secrets.KUBE_CONFIG }} 
-        - run: |
-             kubectl apply -f deployment-service.yml -n mahidhar
+
+        - name:     
+          run: |
+             kubectl apply -f svc.yml -n mahidhar
+             kubectl apply -f deployment.yml -n mahidhar
              kubectl get svc -n mahihdar
              kubectl get pods -n mahidhar
             
