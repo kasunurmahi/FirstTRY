@@ -99,9 +99,9 @@ jobs:
           with:
             base64-kube-config: ${{ secrets.KUBE_CONFIG }} 
 
-        - name:     
+        - name:  run manisfest   
           run: |
-             kubectl apply -f svc.yml -n mahidhar
+             # kubectl apply -f svc.yml -n mahidhar
              kubectl apply -f deployment-service.yml -n mahidhar
              kubectl get svc -n mahihdar
              kubectl get pods -n mahidhar
